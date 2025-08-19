@@ -39,19 +39,20 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <p className={styles.sectionSubText}>Introducere</p>
+        <h2 className={styles.sectionHeadText}>Prezentare generală</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        Generation Salez este o agenție de marketing digital și dezvoltare web,
+        specializată în crearea de soluții inovatoare și eficiente pentru
+        afaceri moderne. Echipa noastră combină creativitatea cu tehnologia
+        pentru a livra proiecte scalabile, interactive și orientate către
+        rezultate. Lucrăm alături de clienții noștri pentru a transforma ideile
+        în realitate digitală.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
