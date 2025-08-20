@@ -33,7 +33,9 @@ export const ComputersCanvas = () => {
         <Canvas
             shadows
             dpr={[1, 2]}
-            camera={{ position: [0, 0.8, 3.5], fov: 35 }} // was [0, 1.2, 4.2]
+            camera={{ position: [0, 0.8, 3.5], fov: 35 }}
+            // 👇 important for touch rotation (prevents browser scrolling the page instead)
+            style={{ touchAction: "none" }}
         >
             {/* Lights — main accent is #FAC308 */}
             <ambientLight intensity={0.5} />
@@ -56,15 +58,18 @@ export const ComputersCanvas = () => {
             <Suspense fallback={<Loader />}>
                 <PresentationControls
                     global
-                    polar={[(-Math.PI / 6), Math.PI / 6]} // up/down limit
-                    azimuth={[-Math.PI / 4, Math.PI / 4]} // left/right limit
                     snap
+                    // full 360° horizontal rotation
+                    azimuth={[-Infinity, Infinity]}
+                    // generous vertical tilt (adjust if you want more/less up-down)
+                    polar={[-Math.PI / 2, Math.PI / 2]}
                     config={{ mass: 1, tension: 170, friction: 26 }}
                 >
                     <Float speed={1} rotationIntensity={0.25} floatIntensity={0.4}>
                         <Mac isMobile={isMobile} />
                     </Float>
                 </PresentationControls>
+
 
                 {/* Subtle ground contact + environment reflections */}
                 <ContactShadows

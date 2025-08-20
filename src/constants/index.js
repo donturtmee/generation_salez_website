@@ -80,6 +80,10 @@ const technologies = [
     name: "React JS",
     icon: reactjs,
   },
+  {
+    name: "Figma",
+    icon: reactjs,
+  },
   // {
   //   name: "Redux Toolkit",
   //   icon: redux,
