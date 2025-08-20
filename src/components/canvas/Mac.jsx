@@ -139,7 +139,7 @@ export default function Mac({ isMobile = false }) {
                 {/* BACK-LID STICKER — on the outside of the lid */}
                 // BACK-LID STICKER — plane (slightly smaller)
                 {screen2Tex && (
-                    <mesh position={[0, 11, -12.24]} rotation={[0, Math.PI, 0]}>
+                    <mesh position={[0, 11, -12.23]} rotation={[0, Math.PI, 0]}>
                         <planeGeometry args={[6.8, 6.8 * (screen2Size[1] / screen2Size[0])]} />
                         <meshBasicMaterial
                             map={screen2Tex}
