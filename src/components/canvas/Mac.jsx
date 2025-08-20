@@ -7,12 +7,22 @@ export default function Mac({ isMobile = false }) {
     const { scene } = useGLTF("/models/mac.glb");
 
     // textures
-    const screenTex    = useTexture("/textures/screen.png");
+    const screenTex    = useTexture("/textures/screen2.png");
     const keyboardTex  = useTexture("/textures/keyboard.png");
     const screen2Tex   = useTexture("/textures/logo.svg"); // <-- NEW: your extra JPG
 
     const [appliedToScreen, setAppliedToScreen] = useState(false);
     const [appliedToKeyboard, setAppliedToKeyboard] = useState(false);
+
+    // Click handler (put above the return in Mac.jsx)
+    // Mac.jsx (top of component, before return)
+    const goToWorks = () => {
+        const el = document.querySelector("#works");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+        else window.location.hash = "works";
+    };
+
+
 
     const { scale, position, rotation } = useMemo(
         () => ({
@@ -128,11 +138,27 @@ export default function Mac({ isMobile = false }) {
             <group scale={scale} position={position} rotation={rotation}>
                 <primitive object={scene} castShadow receiveShadow />
 
-                {/* Screen fallback (base) */}
+
+                {/* Clickable hotspot over the screen */}
+                <mesh
+                    position={[0, 11, -11.66]}                     // a hair in front of your screen plane
+                    onClick={goToWorks}
+                    onPointerOver={() => (document.body.style.cursor = "pointer")}
+                    onPointerOut={() => (document.body.style.cursor = "default")}
+                >
+                    <planeGeometry args={[31, 20]} />              {/* same size as your screen */}
+                    <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+                </mesh>
+
+
                 {!appliedToScreen && screenTex && (
-                    <mesh position={[0, 11, -11.7]}>
+                    <mesh position={[0, 11, -11.7]} rotation={[Math.PI, 0, 0]}> {/* 180° around Y */}
                         <planeGeometry args={[SCREEN_W, SCREEN_H]} />
-                        <meshBasicMaterial map={screenTex} toneMapped={false} />
+                        <meshBasicMaterial
+                            map={screenTex}
+                            toneMapped={false}
+                            side={THREE.DoubleSide}   // important for 180° flips
+                        />
                     </mesh>
                 )}
 
@@ -167,6 +193,6 @@ export default function Mac({ isMobile = false }) {
 }
 
 useGLTF.preload("/models/mac.glb");
-useTexture.preload("/textures/screen.png");
+useTexture.preload("/textures/screen2.png");
 useTexture.preload("/textures/keyboard.png");
 useTexture.preload("/textures/logo.svg"); // <-- NEW

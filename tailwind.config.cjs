@@ -5,9 +5,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
+        primary: "#0A0B0F",      // darker base
         secondary: "#aaa6c3",
         tertiary: "#151030",
+        accent: "#FAC308",       // <-- add accent token
         "black-100": "#100d25",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
@@ -19,7 +20,14 @@ module.exports = {
         xs: "450px",
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/herobg.webp')",
+        // if you keep a file:
+        // "hero-pattern": "url('/src/assets/herobg.webp')",
+
+        // optional: pure CSS version that matches your gold lines vibe
+        "hero-gold":
+            "radial-gradient(60% 50% at 80% 20%, rgba(250,195,8,0.08), transparent 60%),\
+             radial-gradient(60% 50% at 15% 80%, rgba(250,195,8,0.06), transparent 60%),\
+             linear-gradient(#0A0B0F, #0A0B0F)",
       },
     },
   },
