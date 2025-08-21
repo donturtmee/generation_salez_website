@@ -1,8 +1,4 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
   javascript,
   typescript,
   html,
@@ -15,6 +11,9 @@ import {
 } from "../assets";
 
 import webdevIcon from "../assets/webdevIcon.svg"
+import mobile from "../assets/mobile.svg"
+import backend from "../assets//backend.svg"
+import design from "../assets/design.svg"
 
 
 export const navLinks = [
@@ -42,12 +41,12 @@ const services = [
     icon: mobile,
   },
   {
-    title: "Dezvoltare Backend",
-    icon: backend,
+    title: "Design Digital",
+    icon: design,
   },
   {
-    title: "Creare Conținut",
-    icon: creator,
+    title: "Dezvoltare Backend",
+    icon: backend,
   },
 ];
 
@@ -113,7 +112,7 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Generation Salez",
+    name: "Amazoniq",
     description:
       "Agenție care ajută companiile să își crească vizibilitatea online.",
     tags: [
@@ -134,7 +133,7 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Generation Salez",
+    name: "Consult-Juridic",
     description:
       "Agenție care ajută companiile să își crească vizibilitatea online.",
     tags: [
@@ -155,7 +154,7 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Generation Salez",
+    name: "Roasted",
     description:
       "Agenție care ajută companiile să își crească vizibilitatea online.",
     tags: [
