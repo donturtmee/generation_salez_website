@@ -52,19 +52,19 @@ export default function GoldFlowBg() {
                 ))}
             </svg>
 
-            {/* drifting accent glows (optional) */}
-            <motion.div
-                className="absolute -left-24 -bottom-24 w-[50vw] h-[50vw] rounded-full"
-                style={{ background: "radial-gradient(closest-side, #FAC30833, transparent 70%)", filter: "blur(60px)" }}
-                animate={{ x: [0, 30, -20, 0], y: [0, -20, 25, 0], scale: [1, 1.05, 0.98, 1] }}
-                transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-                className="absolute -right-20 -top-28 w-[42vw] h-[42vw] rounded-full"
-                style={{ background: "radial-gradient(closest-side, #FAC30826, transparent 70%)", filter: "blur(70px)" }}
-                animate={{ x: [0, -25, 15, 0], y: [0, 22, -18, 0], scale: [1, 0.97, 1.04, 1] }}
-                transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-            />
+            {/*/!* drifting accent glows (optional) *!/*/}
+            {/*<motion.div*/}
+            {/*    className="absolute -left-24 -bottom-24 w-[50vw] h-[50vw] rounded-full"*/}
+            {/*    style={{ background: "radial-gradient(closest-side, #FAC30833, transparent 70%)", filter: "blur(60px)" }}*/}
+            {/*    animate={{ x: [0, 30, -20, 0], y: [0, -20, 25, 0], scale: [1, 1.05, 0.98, 1] }}*/}
+            {/*    transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}*/}
+            {/*/>*/}
+            {/*<motion.div*/}
+            {/*    className="absolute -right-20 -top-28 w-[42vw] h-[42vw] rounded-full"*/}
+            {/*    style={{ background: "radial-gradient(closest-side, #FAC30826, transparent 70%)", filter: "blur(70px)" }}*/}
+            {/*    animate={{ x: [0, -25, 15, 0], y: [0, 22, -18, 0], scale: [1, 0.97, 1.04, 1] }}*/}
+            {/*    transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}*/}
+            {/*/>*/}
         </div>
     );
 }

@@ -17,11 +17,11 @@ module.exports = {
       colors: {
         primary: "#0A0B0F",      // darker base
         secondary: "#aaa6c3",
-        tertiary: "#151030",
+        tertiary: "#000000",
         accent: "#FAC308",       // <-- add accent token
-        "black-100": "#100d25",
+        "black-100": "#0e0e0e",
         "black-200": "#090325",
-        "white-100": "#f3f3f3",
+        "white-100": "#fbfbfb",
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
