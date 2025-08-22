@@ -1,19 +1,10 @@
-import {
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  figma,
-  carrent,
-  jobit,
-  tripguide,
-} from "../assets";
+import {css, figma, html, javascript, jobit, reactjs, tripguide, typescript,} from "../assets";
 
 import webdevIcon from "../assets/webdevIcon.svg"
 import mobile from "../assets/mobile.svg"
 import backend from "../assets//backend.svg"
 import design from "../assets/design.svg"
+import amazoniq from "../assets/amazoniq.png"
 
 
 export const navLinks = [
@@ -129,7 +120,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: amazoniq,
     source_code_link: "https://github.com/",
   },
   {
