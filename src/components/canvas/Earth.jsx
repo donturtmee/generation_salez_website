@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
+import DebugNaN from "./DebugNaN";
 
 const Earth = () => {
   const earth = useGLTF("./planet/scene.gltf");
@@ -16,7 +17,7 @@ const EarthCanvas = () => {
   return (
     <Canvas
       shadows
-      frameloop='demand'
+      frameloop="demand"
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
       camera={{
@@ -26,6 +27,7 @@ const EarthCanvas = () => {
         position: [-4, 3, 6],
       }}
     >
+      <DebugNaN />
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           autoRotate

@@ -1,10 +1,10 @@
-import {nextui} from "@nextui-org/theme";
+import { nextui } from "@nextui-org/theme";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,tsx}",
+    "./components/*.{js,ts,jsx,tsx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./layouts/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,10 +15,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#0A0B0F",      // darker base
+        default: "#FAC308",
+        primary: "#0A0B0F", // darker base
         secondary: "#ffffff",
         tertiary: "#000000",
-        accent: "#FAC308",       // <-- add accent token
+        accent: "#FAC308", // <-- add accent token
         "black-100": "#0e0e0e",
         "black-200": "#090325",
         "white-100": "#fbfbfb",
@@ -35,7 +36,7 @@ module.exports = {
 
         // optional: pure CSS version that matches your gold lines vibe
         "hero-gold":
-            "radial-gradient(60% 50% at 80% 20%, rgba(250,195,8,0.08), transparent 60%),\
+          "radial-gradient(60% 50% at 80% 20%, rgba(250,195,8,0.08), transparent 60%),\
              radial-gradient(60% 50% at 15% 80%, rgba(250,195,8,0.06), transparent 60%),\
              linear-gradient(#0A0B0F, #0A0B0F)",
       },
