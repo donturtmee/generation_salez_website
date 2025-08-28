@@ -1,16 +1,15 @@
-import {css, figma, html, javascript, reactjs, typescript,} from "../assets";
+import { css, figma, html, javascript, reactjs, typescript } from "../assets";
 
-import webdevIcon from "../assets/webdevIcon.svg"
-import mobile from "../assets/mobile.svg"
-import backend from "../assets//backend.svg"
-import design from "../assets/design.svg"
-import amazoniq from "../assets/amazoniq.png"
-import consult from "../assets/consult.png"
-import roasted from "../assets/roasted.png"
-import mediator from "../assets/mediator.png"
-import arome from "../assets/arome.png"
-import zeppelin from "../assets/zeppelin.png"
-
+import webdevIcon from "../assets/webdevIcon.svg";
+import mobile from "../assets/mobile.svg";
+import backend from "../assets//backend.svg";
+import design from "../assets/design.svg";
+import amazoniq from "../assets/amazoniq.png";
+import consult from "../assets/consult.png";
+import roasted from "../assets/roasted.png";
+import mediator from "../assets/mediator.png";
+import arome from "../assets/arome.png";
+import zeppelin from "../assets/zeppelin.png";
 
 export const navLinks = [
   {
@@ -18,7 +17,7 @@ export const navLinks = [
     title: "Servicii",
   },
   {
-    id: "work",
+    id: "works",
     title: "Proiecte",
   },
   {
@@ -71,10 +70,7 @@ const technologies = [
     name: "Figma",
     icon: figma,
   },
-  
 ];
-
-
 
 const testimonials = [
   {
@@ -174,7 +170,7 @@ const projects = [
   {
     name: "Mediator Steluța Năstase",
     description:
-        "Agenție care ajută companiile să își crească vizibilitatea online.",
+      "Agenție care ajută companiile să își crească vizibilitatea online.",
     tags: [
       {
         name: "nextjs",
@@ -193,9 +189,9 @@ const projects = [
     source_code_link: "https://www.stelutanastase.eu/",
   },
   {
-    name: "Arome și Esnețe",
+    name: "Arome și Esențe",
     description:
-        "Agenție care ajută companiile să își crească vizibilitatea online.",
+      "Agenție care ajută companiile să își crească vizibilitatea online.",
     tags: [
       {
         name: "nextjs",
@@ -217,7 +213,7 @@ const projects = [
   {
     name: "Zeppelin Schule",
     description:
-        "Agenție care ajută companiile să își crească vizibilitatea online.",
+      "Agenție care ajută companiile să își crească vizibilitatea online.",
     tags: [
       {
         name: "nextjs",
