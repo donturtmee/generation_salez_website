@@ -1,27 +1,24 @@
-import {BrowserRouter} from "react-router-dom";
+// App.jsx
 import {About, Contact, Feedbacks, Hero, Navbar, StarsCanvas, Tech, Works} from "./components";
 
 const App = () => {
   return (
-      <BrowserRouter>
-        {/* Top area transparent */}
-        <div className="relative z-0">
-          <Navbar />
-          <Hero />
+      // ✅ No BrowserRouter here
+      <div className="relative z-0">
+        <Navbar />
+        <Hero />
 
-          {/* Rest of site can use the dark site background */}
-          <div className="bg-primary">
-            <About />
-            <Tech />
-            <Works />
-            <Feedbacks />
-            <div className="relative z-0">
-              <Contact />
-              <StarsCanvas />
-            </div>
+        <div className="bg-primary">
+          <About />
+          <Tech />
+          <Works />
+          <Feedbacks />
+          <div className="relative z-0">
+            <Contact />
+            <StarsCanvas />
           </div>
         </div>
-      </BrowserRouter>
+      </div>
   );
 };
 
