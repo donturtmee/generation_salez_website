@@ -79,30 +79,30 @@ const technologies = [
 const testimonials = [
   {
     testimonial:
-      "Generation Salez ne-a adus rezultate vizibile încă din primele luni.",
+      "Pe parcursul proiectului, orice problemă a fost tratată cu seriozitate, iar Robert s-a asigurat că găsește mereu o soluție potrivită. M-a impresionat dedicarea lui și dorința reală de a livra un rezultat de calitate.\n",
     name: "Lucian Niculescu",
     // REMOVE ME
     // designation: "",
     company: "Consult Juridic",
-    image: "/logo.svg",
+    // image: "/logo.svg",
   },
   {
     testimonial:
-      "Profesioniști și creativi – site-ul nostru funcționează impecabil.",
+      "Sunt super incantata sa observ evolutia lui Robert, Munca pe care a depus-o la website-ul AMAZONIQ (amazoniqcoffee.ro) a fost excelenta. O persoana cu bun simt, respect, care isi respecta cuvantul si deadlin-urile. Colaborarea cu el a fost si este in continuare o placere. Va puteti baza ca daca incepe ceva, nu se va lasa pana cand totul va fi perfect, toate cerintele fiind respectate la virgula 🐒❤.",
     name: "Maria Chițu",
     // REMOVE ME
     // designation: "",
     company: "Amazoniq Coffee",
-    image: "/logo.svg",
+    // image: "/logo.svg",
   },
   {
     testimonial:
-      "Echipa Generation Salez livrează rapid și cu atenție la detalii.",
+      "Colaborare foarte bună, rapidă și clară. Au comunicat constant și gestionează site-ul cu update-uri și după proiect. Recomand cu drag!",
     name: "Dan Moga",
     // REMOVE ME
     // designation: "",
     company: "Roasted Coffee",
-    image: "/logo.svg",
+    // image: "/logo.svg",
   },
 ];
 

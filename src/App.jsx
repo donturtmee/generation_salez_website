@@ -1,27 +1,28 @@
-import { BrowserRouter } from "react-router-dom";
-
-
-import { About, Contact, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import {BrowserRouter} from "react-router-dom";
+import {About, Contact, Feedbacks, Hero, Navbar, StarsCanvas, Tech, Works} from "./components";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+      <BrowserRouter>
+        {/* Top area transparent */}
+        <div className="relative z-0">
           <Navbar />
           <Hero />
+
+          {/* Rest of site can use the dark site background */}
+          <div className="bg-primary">
+            <About />
+            <Tech />
+            <Works />
+            <Feedbacks />
+            <div className="relative z-0">
+              <Contact />
+              <StarsCanvas />
+            </div>
+          </div>
         </div>
-        <About />
-        <Tech />
-        <Works />
-        <Feedbacks />
-        <div className='relative z-0'>
-          <Contact />
-          <StarsCanvas />
-        </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
   );
-}
+};
 
 export default App;

@@ -24,14 +24,25 @@ export default function Mac({ isMobile = false }) {
 
 
 
+    // Mac.jsx
     const { scale, position, rotation } = useMemo(
-        () => ({
-            scale: isMobile ? 0.015 : 0.03,
-            position: [0, -0.8, 0],
-            rotation: [0, -Math.PI / 8, 0],
-        }),
+        () => {
+            if (isMobile) {
+                return {
+                    scale: 0.015,
+                    position: [0, -0.2, 0],   // higher up on mobile
+                    rotation: [0, -Math.PI / 8, 0],
+                };
+            }
+            return {
+                scale: 0.03,
+                position: [0, -0.2, 0],    // a bit lower for desktop
+                rotation: [0, -Math.PI / 8, 0],
+            };
+        },
         [isMobile]
     );
+
 
     const prep = (tex) => {
         if (!tex) return;
@@ -134,65 +145,67 @@ export default function Mac({ isMobile = false }) {
     }, [scene, screenTex, keyboardTex]);
 
     return (
-        <Center>
-            <group scale={scale} position={position} rotation={rotation}>
-                <primitive object={scene} castShadow receiveShadow />
+        <group scale={scale} position={position} rotation={rotation}>
+            <Center>
+                    <primitive object={scene} castShadow receiveShadow/>
 
 
-                {/* Clickable hotspot over the screen */}
-                <mesh
-                    position={[0, 11, -11.66]}                     // a hair in front of your screen plane
-                    onClick={goToWorks}
-                    onPointerOver={() => (document.body.style.cursor = "pointer")}
-                    onPointerOut={() => (document.body.style.cursor = "default")}
-                >
-                    <planeGeometry args={[31, 20]} />              {/* same size as your screen */}
-                    <meshBasicMaterial transparent opacity={0} depthWrite={false} />
-                </mesh>
-
-
-                {!appliedToScreen && screenTex && (
-                    <mesh position={[0, 11, -11.7]} rotation={[Math.PI, 0, 0]}> {/* 180° around Y */}
-                        <planeGeometry args={[SCREEN_W, SCREEN_H]} />
-                        <meshBasicMaterial
-                            map={screenTex}
-                            toneMapped={false}
-                            side={THREE.DoubleSide}   // important for 180° flips
-                        />
+                    {/* Clickable hotspot over the screen */}
+                    <mesh
+                        position={[0, 11, -11.66]}                     // a hair in front of your screen plane
+                        onClick={goToWorks}
+                        onPointerOver={() => (document.body.style.cursor = "pointer")}
+                        onPointerOut={() => (document.body.style.cursor = "default")}
+                    >
+                        <planeGeometry args={[31, 20]}/>
+                        {/* same size as your screen */}
+                        <meshBasicMaterial transparent opacity={0} depthWrite={false}/>
                     </mesh>
-                )}
-
-                {/* BACK-LID STICKER — on the outside of the lid */}
-                // BACK-LID STICKER — plane (slightly smaller)
-                {screen2Tex && (
-                    <mesh position={[0, 11, -12.23]} rotation={[0, Math.PI, 0]}>
-                        <planeGeometry args={[6.8, 6.8 * (screen2Size[1] / screen2Size[0])]} />
-                        <meshBasicMaterial
-                            map={screen2Tex}
-                            transparent
-                            alphaTest={0.1}
-                            depthWrite={false}
-                            polygonOffset
-                            polygonOffsetFactor={-2}
-                            toneMapped={false}
-                        />
-                    </mesh>
-                )}
 
 
-                {/* Keyboard fallback — rotated 90° to lay flat */}
-                {!appliedToKeyboard && keyboardTex && (
-                    <mesh position={[0.05, 0.2, -4.3]} rotation={[-Math.PI / 2, 0, -Math.PI]}>
-                        <planeGeometry args={kbSize} />
-                        <meshBasicMaterial map={keyboardTex} toneMapped={false} />
-                    </mesh>
-                )}
-            </group>
-        </Center>
-    );
-}
+                    {!appliedToScreen && screenTex && (
+                        <mesh position={[0, 11, -11.7]} rotation={[Math.PI, 0, 0]}> {/* 180° around Y */}
+                            <planeGeometry args={[SCREEN_W, SCREEN_H]}/>
+                            <meshBasicMaterial
+                                map={screenTex}
+                                toneMapped={false}
+                                side={THREE.DoubleSide}   // important for 180° flips
+                            />
+                        </mesh>
+                    )}
 
-useGLTF.preload("/models/mac.glb");
-useTexture.preload("/textures/screen2.png");
-useTexture.preload("/textures/keyboard.png");
-useTexture.preload("/textures/logo.svg"); // <-- NEW
+                    {/* BACK-LID STICKER — on the outside of the lid */}
+                    // BACK-LID STICKER — plane (slightly smaller)
+                    {screen2Tex && (
+                        <mesh position={[0, 11, -12.23]} rotation={[0, Math.PI, 0]}>
+                            <planeGeometry args={[6.8, 6.8 * (screen2Size[1] / screen2Size[0])]}/>
+                            <meshBasicMaterial
+                                map={screen2Tex}
+                                transparent
+                                alphaTest={0.1}
+                                depthWrite={false}
+                                polygonOffset
+                                polygonOffsetFactor={-2}
+                                toneMapped={false}
+                            />
+                        </mesh>
+                    )}
+
+
+                    {/* Keyboard fallback — rotated 90° to lay flat */}
+                    {!appliedToKeyboard && keyboardTex && (
+                        <mesh position={[0.05, 0.2, -4.3]} rotation={[-Math.PI / 2, 0, -Math.PI]}>
+                            <planeGeometry args={kbSize}/>
+                            <meshBasicMaterial map={keyboardTex} toneMapped={false}/>
+                        </mesh>
+                    )}
+
+            </Center>
+        </group>
+            );
+            }
+
+            useGLTF.preload("/models/mac.glb");
+            useTexture.preload("/textures/screen2.png");
+            useTexture.preload("/textures/keyboard.png");
+            useTexture.preload("/textures/logo.svg"); // <-- NEW

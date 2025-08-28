@@ -5,13 +5,14 @@ import {slideIn} from "../utils/motion.js";
 
 // decorative balls behind everything
 // decorative balls behind everything — responsive (mobile/desktop)
+// BouncyBalls.jsx (inside Hero)
 const BouncyBalls = () => (
-    <div className="pointer-events-none absolute inset-0 -z-10">
+    <div className="pointer-events-none absolute inset-0 z-[10]">
         {/* LEFT ball */}
         <motion.div
             className={`
         absolute rounded-full bg-[#FAC308]
-        w-[7.5rem] h-[7.5rem] left-3 top-[72%]      /* mobile */
+        w-[5.5rem] h-[5.5rem] left-3 top-[72%]      /* mobile */
         sm:w-[10rem] sm:h-[10rem] sm:left-[3.5rem] sm:top-[70%]
         md:w-[12rem] md:h-[12rem]
       `}
@@ -23,9 +24,9 @@ const BouncyBalls = () => (
         <motion.div
             className={`
         absolute rounded-full bg-[#FAC308]
-        w-[7.5rem] h-[7.5rem] right-3 top-[16%]     /* mobile */
+        w-[5.5rem] h-[5.5rem] right-3 top-[35%]     /* mobile */
         sm:w-[10rem] sm:h-[10rem] sm:right-[3.5rem] sm:top-[20%]
-        md:w/[12rem] md:h/[12rem]
+        md:w-[12rem] md:h-[12rem]
       `}
             animate={{ y: [0, 16, 0], x: [0, -6, 0], scale: [1, 1.02, 1] }}
             transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
@@ -34,23 +35,26 @@ const BouncyBalls = () => (
 );
 
 
+
 const Hero = () => {
     return (
-        <section className="relative w-full h-screen mx-auto overflow-hidden">
+        <section className="relative w-full h-screen mx-auto overflow-hidden bg-primary">
             {/* bouncy balls background */}
-            <BouncyBalls />
+            <BouncyBalls/>
+
+
 
             <motion.div
                 variants={slideIn("left", "tween", 0.2, 1)}
-                className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+                className="flex-[0.75] p-8"               // no bg, no rounded corner
             >
                 <div
                     className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX}
           flex flex-row items-start gap-5`}
                 >
                     <div className="flex flex-col justify-center items-center mt-5">
-                        <div className="w-5 h-5 rounded-full bg-[#FAC308] shadow-[0_0_24px_#FAC308aa]" />
-                        <div className="w-1 sm:h-80 h-40 bg-gradient-to-b from-[#FAC308] to-transparent" />
+                        <div className="w-5 h-5 rounded-full bg-[#FAC308] shadow-[0_0_24px_#FAC308aa]"/>
+                        <div className="w-1 sm:h-80 h-40 bg-gradient-to-b from-[#FAC308] to-transparent"/>
                     </div>
 
                     <div>
@@ -59,29 +63,33 @@ const Hero = () => {
                         </h1>
                         <p className={`${styles.heroSubText} mt-2 text-white-100`}>
                             Construim experiențe digitale
-                            <br className="sm:block hidden" />
+                            <br className="sm:block hidden"/>
                             unice pentru afacerea ta
                         </p>
                     </div>
                 </div>
 
                 <div className="absolute inset-0 h-full w-full">
-                    <ComputersCanvas />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
+                    <ComputersCanvas/>
+                    {/* start at top, but don't tint the nav because it begins fully transparent */}
+                    <div className="pointer-events-none absolute inset-0
+                    bg-gradient-to-b from-transparent via-transparent to-black/70"/>
                 </div>
 
                 {/* Scroll cue */}
-                <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+                <div className="absolute xs:bottom-10 bottom-32 left-1/2 -translate-x-1/2 z-20">
                     <a href="#about" aria-label="Scroll to about">
-                        <div className="w-[35px] h-[64px] rounded-3xl border-4 border-white/30 flex justify-center items-start p-2 backdrop-blur-sm bg-white/[0.03]">
+                        <div
+                            className="w-[35px] h-[64px] rounded-3xl border-4 border-white/30 flex justify-center items-start p-2 backdrop-blur-sm bg-white/[0.03]">
                             <motion.div
-                                animate={{ y: [0, 24, 0] }}
-                                transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
+                                animate={{y: [0, 24, 0]}}
+                                transition={{duration: 1.5, repeat: Infinity, repeatType: "loop"}}
                                 className="w-3 h-3 rounded-full bg-[#FAC308] shadow-[0_0_10px_#FAC308aa] mb-1"
                             />
                         </div>
                     </a>
                 </div>
+
             </motion.div>
         </section>
     );

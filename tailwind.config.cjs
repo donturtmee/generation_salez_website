@@ -20,7 +20,7 @@ module.exports = {
         tertiary: "#000000",
         accent: "#FAC308",       // <-- add accent token
         "black-100": "#0e0e0e",
-        "black-200": "#090325",
+        "black-200": "#000000",
         "white-100": "#fbfbfb",
       },
       boxShadow: {
