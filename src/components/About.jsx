@@ -1,11 +1,11 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 
-import { styles } from "../styles";
-import { services } from "../constants";
-import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
+import {styles} from "../styles";
+import {services} from "../constants";
+import {SectionWrapper} from "../hoc";
+import {fadeIn, textVariant} from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => (
     <Tilt
@@ -48,7 +48,7 @@ const About = () => {
 
           <motion.p
               variants={fadeIn("", "", 0.1, 1)}
-              className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+              className="mt-4 text-secondary text-[20px] max-w-3xl leading-[30px]"
           >
               Generation Salez este o agenție de marketing digital și dezvoltare web,
               specializată în crearea de soluții inovatoare și eficiente pentru

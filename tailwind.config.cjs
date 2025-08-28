@@ -1,4 +1,4 @@
-import { nextui } from "@nextui-org/theme";
+import {nextui} from "@nextui-org/theme";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
     extend: {
       colors: {
         primary: "#0A0B0F",      // darker base
-        secondary: "#aaa6c3",
+        secondary: "#ffffff",
         tertiary: "#000000",
         accent: "#FAC308",       // <-- add accent token
         "black-100": "#0e0e0e",

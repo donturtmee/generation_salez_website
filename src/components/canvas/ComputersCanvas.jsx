@@ -1,13 +1,7 @@
 // components/canvas/ComputersCanvas.jsx
-import { Canvas } from "@react-three/fiber";
-import {
-    Environment,
-    ContactShadows,
-    PresentationControls,
-    Float,
-    Html,
-} from "@react-three/drei";
-import { Suspense, useEffect, useState } from "react";
+import {Canvas} from "@react-three/fiber";
+import {ContactShadows, Environment, Float, Html, PresentationControls,} from "@react-three/drei";
+import {Suspense, useEffect, useState} from "react";
 import Mac from "./Mac";
 
 function Loader() {
@@ -33,7 +27,7 @@ export const ComputersCanvas = () => {
         <Canvas
             shadows
             dpr={[1, 2]}
-            camera={{ position: [0, 0.8, 3.5], fov: 35 }}
+            camera={{ position: [0.1, 1, 3.5], fov: 35 }}
             // 👇 important for touch rotation (prevents browser scrolling the page instead)
             style={{ touchAction: "none" }}
         >

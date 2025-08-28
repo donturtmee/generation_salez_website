@@ -1,20 +1,25 @@
-import {css, figma, html, javascript, jobit, reactjs, tripguide, typescript,} from "../assets";
+import {css, figma, html, javascript, reactjs, typescript,} from "../assets";
 
 import webdevIcon from "../assets/webdevIcon.svg"
 import mobile from "../assets/mobile.svg"
 import backend from "../assets//backend.svg"
 import design from "../assets/design.svg"
 import amazoniq from "../assets/amazoniq.png"
+import consult from "../assets/consult.png"
+import roasted from "../assets/roasted.png"
+import mediator from "../assets/mediator.png"
+import arome from "../assets/arome.png"
+import zeppelin from "../assets/zeppelin.png"
 
 
 export const navLinks = [
   {
     id: "about",
-    title: "Despre Noi",
+    title: "Servicii",
   },
   {
     id: "work",
-    title: "Experiență",
+    title: "Proiecte",
   },
   {
     id: "contact",
@@ -75,28 +80,28 @@ const testimonials = [
   {
     testimonial:
       "Generation Salez ne-a adus rezultate vizibile încă din primele luni.",
-    name: "Andrei Popescu",
+    name: "Lucian Niculescu",
     // REMOVE ME
     // designation: "",
-    company: "Retail Fashion",
+    company: "Consult Juridic",
     image: "/logo.svg",
   },
   {
     testimonial:
       "Profesioniști și creativi – site-ul nostru funcționează impecabil.",
-    name: "Ioana Marinescu",
+    name: "Maria Chițu",
     // REMOVE ME
     // designation: "",
-    company: "Startup Tech",
+    company: "Amazoniq Coffee",
     image: "/logo.svg",
   },
   {
     testimonial:
       "Echipa Generation Salez livrează rapid și cu atenție la detalii.",
-    name: "Mihai Ionescu",
+    name: "Dan Moga",
     // REMOVE ME
     // designation: "",
-    company: "Logistics Solutions",
+    company: "Roasted Coffee",
     image: "/logo.svg",
   },
 ];
@@ -121,7 +126,7 @@ const projects = [
       },
     ],
     image: amazoniq,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://amazoniqcoffee.ro/",
   },
   {
     name: "Consult-Juridic",
@@ -141,8 +146,8 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: consult,
+    source_code_link: "https://www.consult-juridic.eu/",
   },
   {
     name: "Roasted",
@@ -162,8 +167,74 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    textColor: "black",
+    image: roasted,
+    source_code_link: "https://roasted.ro/",
+  },
+  {
+    name: "Mediator Steluța Năstase",
+    description:
+        "Agenție care ajută companiile să își crească vizibilitatea online.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: mediator,
+    source_code_link: "https://www.stelutanastase.eu/",
+  },
+  {
+    name: "Arome și Esnețe",
+    description:
+        "Agenție care ajută companiile să își crească vizibilitatea online.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+    textColor: "black",
+    image: arome,
+    source_code_link: "https://aromesiesente.ro/",
+  },
+  {
+    name: "Zeppelin Schule",
+    description:
+        "Agenție care ajută companiile să își crească vizibilitatea online.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "supabase",
+        color: "green-text-gradient",
+      },
+      {
+        name: "css",
+        color: "pink-text-gradient",
+      },
+    ],
+
+    image: zeppelin,
+    source_code_link: "https://www.zeppelinschule.ro/",
   },
 ];
 

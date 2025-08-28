@@ -1,7 +1,7 @@
 // components/canvas/Mac.jsx
-import { useGLTF, useTexture, Center } from "@react-three/drei";
+import {Center, useGLTF, useTexture} from "@react-three/drei";
 import * as THREE from "three";
-import { useMemo, useEffect, useState } from "react";
+import {useEffect, useMemo, useState} from "react";
 
 export default function Mac({ isMobile = false }) {
     const { scene } = useGLTF("/models/mac.glb");
@@ -27,7 +27,7 @@ export default function Mac({ isMobile = false }) {
     const { scale, position, rotation } = useMemo(
         () => ({
             scale: isMobile ? 0.015 : 0.03,
-            position: [0, -0.4, 0],
+            position: [0, -0.8, 0],
             rotation: [0, -Math.PI / 8, 0],
         }),
         [isMobile]
