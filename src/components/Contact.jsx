@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { Toaster, toast } from "react-hot-toast";
+import React, {useRef, useState} from "react";
+import {motion} from "framer-motion";
+import {toast, Toaster} from "react-hot-toast";
 
-import { styles } from "../styles";
-import { LogoCanvas } from "./canvas/LogoCanvas";
-import { SectionWrapper } from "../hoc";
-import { slideIn } from "../utils/motion";
+import {styles} from "../styles";
+import {LogoCanvas} from "./canvas/LogoCanvas";
+import {SectionWrapper} from "../hoc";
+import {slideIn} from "../utils/motion";
 
 const Contact = () => {
   const formRef = useRef();
@@ -64,99 +64,100 @@ const Contact = () => {
   };
 
   return (
-    <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
-    >
-      <Toaster
-        position="top-right"
-        containerStyle={{
-          top: "100px", // deplasat sub navbar
-          right: "16px",
-          zIndex: 9999, // peste navbar (care e z-20), dar nu chiar
-        }}
-      />
-
-      <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+      <div
+          className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
       >
-        <p className={styles.sectionSubText}>Ia legătura cu noi</p>
-        <h3 className={styles.sectionHeadText}>Contact</h3>
+        <Toaster
+            position="top-right"
+            containerStyle={{
+              top: "100px", // deplasat sub navbar
+              right: "16px",
+              zIndex: 9999, // peste navbar (care e z-20), dar nu chiar
+            }}
+        />
 
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
+        <motion.div
+            variants={slideIn("right", "tween", 0.2, 1)}
+            className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
         >
-          <label className="absolute -left-[9999px] w-px h-px overflow-hidden">
-            <span>Leave this field empty</span>
-            <input
-              type="text"
-              name="website"
-              value={form.website}
-              onChange={handleChange}
-              tabIndex={-1}
-              autoComplete="off"
-            />
-          </label>
+          <LogoCanvas/>
+        </motion.div>
 
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Numele tău</span>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="Cum te numești?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-              required
-            />
-          </label>
+        <motion.div
+            variants={slideIn("left", "tween", 0.2, 1)}
+            className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        >
+          <p className={styles.sectionSubText}>Ia legătura cu noi</p>
+          <h3 className={styles.sectionHeadText}>Contact</h3>
 
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">E-mailul tău</span>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="Adresa ta de e-mail"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-              required
-            />
-          </label>
-
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Mesajul tău</span>
-            <textarea
-              rows={7}
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="Ce dorești să ne transmiți?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-              required
-            />
-          </label>
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+          <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="mt-12 flex flex-col gap-8"
           >
-            {/* {loading ? "Se trimite ..." : "Trimite"} */}
-            Trimite
-          </button>
-        </form>
-      </motion.div>
+            <label className="absolute -left-[9999px] w-px h-px overflow-hidden">
+              <span>Leave this field empty</span>
+              <input
+                  type="text"
+                  name="website"
+                  value={form.website}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+              />
+            </label>
 
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
-      >
-        <LogoCanvas />
-      </motion.div>
-    </div>
+            <label className="flex flex-col">
+              <span className="text-white font-medium mb-4">Numele tău</span>
+              <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="Cum te numești?"
+                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                  required
+              />
+            </label>
+
+            <label className="flex flex-col">
+              <span className="text-white font-medium mb-4">E-mailul tău</span>
+              <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="Adresa ta de e-mail"
+                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                  required
+              />
+            </label>
+
+            <label className="flex flex-col">
+              <span className="text-white font-medium mb-4">Mesajul tău</span>
+              <textarea
+                  rows={7}
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Ce dorești să ne transmiți?"
+                  className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+                  required
+              />
+            </label>
+
+            <button
+                type="submit"
+                disabled={loading}
+                className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+            >
+              {/* {loading ? "Se trimite ..." : "Trimite"} */}
+              Trimite
+            </button>
+          </form>
+        </motion.div>
+
+      </div>
   );
 };
 

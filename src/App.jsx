@@ -1,25 +1,31 @@
-// App.jsx
-import {About, Contact, Feedbacks, Hero, Navbar, StarsCanvas, Tech, Works} from "./components";
+import {Route, Routes} from "react-router-dom";
 
-const App = () => {
-  return (
-      // ✅ No BrowserRouter here
-      <div className="relative z-0">
-        <Navbar />
-        <Hero />
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
-        <div className="bg-primary">
-          <About />
-          <Tech />
-          <Works />
-          <Feedbacks />
-          <div className="relative z-0">
-            <Contact />
-            <StarsCanvas />
-          </div>
-        </div>
-      </div>
-  );
-};
+import TermsAndConditions from "./pages/TermsAndConditions";
 
-export default App;
+import Layout from "./layout/Layout";
+
+import Home from "./pages/Home";
+
+import ContactPage from "./pages/ContactPage";
+
+import FAQ from "./pages/FAQ";
+
+export default function App() {
+    return (
+        <Routes>
+            <Route element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="terms-and-conditions" element={<TermsAndConditions />} />
+                <Route path="contact" element={<ContactPage />} />
+                <Route path="faq" element={<FAQ />} />
+                <Route
+                    path="*"
+                    element={<div className="p-6">404 — Page not found</div>}
+                />
+            </Route>
+        </Routes>
+    );
+}

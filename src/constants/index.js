@@ -1,4 +1,4 @@
-import { css, figma, html, javascript, reactjs, typescript } from "../assets";
+import {css, figma, html, javascript, reactjs, typescript} from "../assets";
 
 import webdevIcon from "../assets/webdevIcon.svg";
 import mobile from "../assets/mobile.svg";
@@ -10,6 +10,9 @@ import roasted from "../assets/roasted.png";
 import mediator from "../assets/mediator.png";
 import arome from "../assets/arome.png";
 import zeppelin from "../assets/zeppelin.png";
+import logoAmazoniq from "../assets/logoAmazoniq.svg";
+import logoConsult from "../assets/logoConsult.png";
+import logoRoasted from "../assets/logoRoasted.png";
 
 export const navLinks = [
   {
@@ -75,12 +78,16 @@ const technologies = [
 const testimonials = [
   {
     testimonial:
-      "Pe parcursul proiectului, orice problemă a fost tratată cu seriozitate, iar Robert s-a asigurat că găsește mereu o soluție potrivită. M-a impresionat dedicarea lui și dorința reală de a livra un rezultat de calitate.\n",
+      "Am colaborat cu Robert pentru realizarea unui site de prezentare în domeniul juridic și pot spune că experiența a fost excelentă. A fost mereu prompt, profesionist și atent la detalii.\n" +
+        "\n" +
+        "Pe parcursul proiectului, orice problemă a fost tratată cu seriozitate, iar Robert s-a asigurat că găsește mereu o soluție potrivită. M-a impresionat dedicarea lui și dorința reală de a livra un rezultat de calitate.\n" +
+        "\n" +
+        "Îl recomand cu încredere oricui caută un web developer serios și implicat. Mulțumesc, Robert!\n\n",
     name: "Lucian Niculescu",
     // REMOVE ME
     // designation: "",
     company: "Consult Juridic",
-    // image: "/logo.svg",
+    image: logoConsult,
   },
   {
     testimonial:
@@ -89,16 +96,16 @@ const testimonials = [
     // REMOVE ME
     // designation: "",
     company: "Amazoniq Coffee",
-    // image: "/logo.svg",
+    image: logoAmazoniq,
   },
   {
     testimonial:
-      "Colaborare foarte bună, rapidă și clară. Au comunicat constant și gestionează site-ul cu update-uri și după proiect. Recomand cu drag!",
+      "Am avut o colaborare excelentă, totul a decurs rapid, clar și cu o foarte mare atenție la detalii. Am avut comunicare constantă pe tot parcursul proiectului, cu termene respectate și propuneri utile care au îmbunătățit website-ul. Inclusiv după lansare gestionează platforma cu update-uri regulate și suport prompt, ceea ce ne scutește timp și ne dă liniște. Recomand cu încredere!",
     name: "Dan Moga",
     // REMOVE ME
     // designation: "",
     company: "Roasted Coffee",
-    // image: "/logo.svg",
+    image: logoRoasted,
   },
 ];
 
@@ -106,18 +113,18 @@ const projects = [
   {
     name: "Amazoniq",
     description:
-      "Agenție care ajută companiile să își crească vizibilitatea online.",
+      "Cafenea de specialitate, cu design responsive și elemente interactive",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "js",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "css",
         color: "pink-text-gradient",
       },
     ],
@@ -127,18 +134,18 @@ const projects = [
   {
     name: "Consult-Juridic",
     description:
-      "Agenție care ajută companiile să își crească vizibilitatea online.",
+      "Website profesional pentru servicii juridice de consultanță",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "css",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "stripe",
         color: "pink-text-gradient",
       },
     ],
@@ -148,19 +155,15 @@ const projects = [
   {
     name: "Roasted",
     description:
-      "Agenție care ajută companiile să își crească vizibilitatea online.",
+      "Website de prezentare, platformă de gestiune a vânzărilor si a stocurilor ",
     tags: [
       {
-        name: "nextjs",
+        name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "php",
         color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
       },
     ],
     textColor: "black",
@@ -170,14 +173,14 @@ const projects = [
   {
     name: "Mediator Steluța Năstase",
     description:
-      "Agenție care ajută companiile să își crească vizibilitatea online.",
+      "Website de prezentare pentru servicii de mediere, optimizat pentru claritate și acces rapid la informații.",
     tags: [
       {
         name: "nextjs",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "emailjs",
         color: "green-text-gradient",
       },
       {
@@ -191,19 +194,15 @@ const projects = [
   {
     name: "Arome și Esențe",
     description:
-      "Agenție care ajută companiile să își crească vizibilitatea online.",
+      "E-commerce pentru produse de gătit, cu accent pe conversii și experiența de cumpărare",
     tags: [
       {
-        name: "nextjs",
+        name: "shopify",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
         name: "css",
-        color: "pink-text-gradient",
+        color: "green-text-gradient",
       },
     ],
     textColor: "black",
@@ -213,19 +212,15 @@ const projects = [
   {
     name: "Zeppelin Schule",
     description:
-      "Agenție care ajută companiile să își crească vizibilitatea online.",
+      "Website pentru școala privată cu accent pe prezentarea serviciilor educaționale",
     tags: [
       {
-        name: "nextjs",
+        name: "wix",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "google ads",
         color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
       },
     ],
 

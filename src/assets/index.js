@@ -1,6 +1,8 @@
 import logo from "./logo.svg";
+import carrent from "./logo.svg";
+import jobit from "./logo.svg";
+import tripguide from "./logo.svg";
 import backend from "./backend.png";
-import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
@@ -16,15 +18,9 @@ import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 
-
-import carrent from "./logo.svg";
-import jobit from "./logo.svg";
-import tripguide from "./logo.svg";
-
 export {
   logo,
   backend,
-  creator,
   mobile,
   web,
   github,
